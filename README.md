@@ -9,12 +9,13 @@ The system transforms categorical food choices into text-like features and appli
 
 ## Methods
 
-- Data preprocessing using pandas
-- Feature encoding (one-hot encoding)
-- Text vectorization using TF-IDF
-- Dimensionality reduction using Truncated SVD
-- Similarity computation using cosine similarity
-- Recommendation based on similar users
+- Text preprocessing and keyword extraction  
+- TF-IDF vectorization  
+- Dimensionality reduction using SVD  
+- Similarity-based recommendation (cosine similarity)  
+- Graph construction using similarity matrix  
+- Community detection using graph clustering  
+- Ranking using PageRank algorithm  
 
 ## Workflow
 
@@ -31,7 +32,9 @@ The system transforms categorical food choices into text-like features and appli
 - pandas  
 - scikit-learn  
 
-## Example Output
+## Notes
 
-The model identifies users with similar preferences and recommends new food items that the target user has not tried.
+This project explores how graph-based methods can capture deeper relationships between items compared to traditional collaborative filtering approaches. 
+
+One challenge encountered was handling real-world text data, including extracting relevant food-related keywords and constructing a consistent feature matrix.
 
