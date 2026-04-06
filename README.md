@@ -1,11 +1,12 @@
-# Food Recommendation System (Graph-Based)
+# Graph-Based Analysis of Food Preferences for Recommendation
 
 This project is an independent exploratory program I developed based on my interest in recommendation systems, using user preference data and text-based feature engineering.
 
 ## Overview
 
-The goal is to recommend new food items to users based on similarity in preferences.  
-The system transforms categorical food choices into text-like features and applies machine learning techniques.
+This project explores how graph-based methods can be used to analyze user food preferences and uncover underlying structure in text-based data.
+
+Rather than directly predicting recommendations, the goal is to represent user preferences, identify similarity between users, and organize them into meaningful groups that can support recommendation tasks.
 
 ## Methods
 
@@ -19,12 +20,18 @@ The system transforms categorical food choices into text-like features and appli
 
 ## Workflow
 
-1. Load and preprocess user preference data  
-2. Convert features into text format  
-3. Apply TF-IDF vectorization  
-4. Reduce dimensionality (SVD)  
-5. Compute similarity between users  
-6. Recommend new items based on similar users  
+1. Construct a small dataset of food preference texts
+2. Convert text into TF-IDF feature vectors
+3. Compute pairwise similarity between documents
+4. Build a k-nearest neighbor graph
+5. Detect communities of similar preferences
+6. Rank central nodes within the graph using PageRank
+
+## Results
+
+The results show that similar food preferences are grouped into distinct communities, such as meat-based, seafood-based, and mixed or Asian-style preferences.
+
+Within each community, PageRank identifies the most central and representative documents, which can be interpreted as typical examples of that preference group.
 
 ## Tools
 
@@ -34,7 +41,4 @@ The system transforms categorical food choices into text-like features and appli
 
 ## Notes
 
-This project explores how graph-based methods can capture deeper relationships between items compared to traditional collaborative filtering approaches. 
-
-One challenge encountered was handling real-world text data, including extracting relevant food-related keywords and constructing a consistent feature matrix.
-
+This project highlights the importance of feature representation in text-based systems. While the dataset here is synthetic and simplified, the approach can be extended to real-world data with more advanced text preprocessing and larger-scale modeling.
